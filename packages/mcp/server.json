@@ -1,0 +1,33 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "nl.nettohelder/mcp",
+  "title": "Nettohelder",
+  "description": "Dutch gross-to-net salary, 550+ CAO pay scales and 2026/2027 tax figures. Offline, TOON output.",
+  "version": "0.1.0",
+  "websiteUrl": "https://nettohelder.nl",
+  "repository": {
+    "url": "https://github.com/jaenster/nettohelder",
+    "source": "github",
+    "id": "1256882670",
+    "subfolder": "packages/mcp"
+  },
+  "icons": [
+    {
+      "src": "https://nettohelder.nl/favicon.svg",
+      "mimeType": "image/svg+xml",
+      "sizes": ["any"]
+    }
+  ],
+  "packages": [
+    {
+      "registryType": "npm",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "identifier": "@nettohelder/mcp",
+      "version": "0.1.0",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "name": "@nettohelder/mcp",
+  "version": "0.1.0",
+  "mcpName": "nl.nettohelder/mcp",
+  "description": "MCP server for Dutch gross-to-net salary calculations, CAO salary tables and tax figures (nettohelder.nl). Runs fully offline.",
+  "type": "module",
+  "license": "MIT",
+  "author": "jaenster",
+  "homepage": "https://nettohelder.nl",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jaenster/nettohelder.git",
+    "directory": "packages/mcp"
+  },
+  "bugs": {
+    "url": "https://github.com/jaenster/nettohelder/issues"
+  },
+  "keywords": [
+    "mcp",
+    "mcp-server",
+    "model-context-protocol",
+    "nettohelder",
+    "bruto-netto",
+    "netto-salaris",
+    "salaris",
+    "cao",
+    "loonheffing",
+    "belasting",
+    "dutch-tax",
+    "salary-calculator",
+    "payroll",
+    "netherlands",
+    "toon"
+  ],
+  "bin": {
+    "nettohelder-mcp": "dist/index.js"
+  },
+  "files": [
+    "dist/index.js",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "gen": "tsx scripts/gen-cao-meta.ts",
+    "golden": "tsx scripts/gen-golden.ts",
+    "build": "tsx scripts/gen-cao-meta.ts && tsx scripts/build.ts",
+    "start": "node dist/index.js",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "prepublishOnly": "pnpm build && pnpm test"
+  },
+  "devDependencies": {
+    "@modelcontextprotocol/sdk": "^1.32.1",
+    "@nettohelder/engine": "workspace:*",
+    "@nettohelder/figures": "workspace:*",
+    "@toon-format/toon": "^2.1.0",
+    "@types/node": "^22.10.0",
+    "esbuild": "^0.25.0",
+    "tsx": "^4.22.3",
+    "typescript": "^5.7.0",
+    "vitest": "^2.1.0",
+    "zod": "^4.4.1"
+  }
+}

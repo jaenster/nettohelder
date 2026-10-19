@@ -1,0 +1,38 @@
+{
+  "manifest_version": "0.3",
+  "name": "nettohelder",
+  "display_name": "Nettohelder",
+  "version": "0.1.0",
+  "description": "Dutch gross-to-net salary, 550+ CAO pay scales and 2026/2027 tax figures. Offline, TOON output.",
+  "long_description": "Bruto-netto calculations for Dutch employment income on the same engine and data as [nettohelder.nl](https://nettohelder.nl). Tax years 2026 (confirmed) and 2027 (provisional, Belastingplan 2027), 550+ CAOs with salary tables, pension, bonus, overtime, part-time hours, 30%/27%-regeling and loonheffingskorting. Every tax figure carries its official source URL. Runs fully offline: no network access, no API key. Results are TOON (Token-Oriented Object Notation).",
+  "author": {
+    "name": "jaenster",
+    "url": "https://nettohelder.nl"
+  },
+  "homepage": "https://nettohelder.nl",
+  "documentation": "https://www.npmjs.com/package/@nettohelder/mcp",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jaenster/nettohelder"
+  },
+  "license": "MIT",
+  "keywords": ["bruto-netto", "salaris", "cao", "loonheffing", "belasting", "dutch-tax", "salary", "payroll", "netherlands"],
+  "server": {
+    "type": "node",
+    "entry_point": "dist/index.js",
+    "mcp_config": {
+      "command": "node",
+      "args": ["${__dirname}/dist/index.js"]
+    }
+  },
+  "tools": [
+    { "name": "bereken_netto", "description": "Gross to net for one Dutch employment income, by monthly or annual salary or a CAO position, with a step-by-step breakdown and the source of every figure." },
+    { "name": "zoek_cao", "description": "Search CAOs with salary data by name, sector or salary kind." },
+    { "name": "cao_details", "description": "Terms, pension fund, allowances and salary tables of one CAO." },
+    { "name": "vergelijk_jaren", "description": "The same calculation for 2026 and 2027 side by side, with the difference." }
+  ],
+  "compatibility": {
+    "platforms": ["darwin", "win32", "linux"],
+    "runtimes": { "node": ">=20.0.0" }
+  }
+}
